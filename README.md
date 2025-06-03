@@ -1,1 +1,10 @@
 # react-Shopping-Mall
+## Functional Requirements:
+1. Pages: Show all products page , Login page, Individual product detail page
+2. Show all products page displays all products.
+3. Clicking Login button leads to Login page.
+4. Individual product detail page can only be accessed after logging in (for the sake of practicing private routing).
+5. Clicking Logout button logs the user out.
+6. If logged out, the user is redirected to login page. 
+7. Login/Logout button is shown accordingly based on the login status.
+8. User can also search for products in the search bar.
