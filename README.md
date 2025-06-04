@@ -1,6 +1,7 @@
 # react-Shopping-Mall
 ## Functional Requirements:
 1. Pages: Show all products page , Login page, Individual product detail page
+    - Navigation bar needs to be created.
 2. Show all products page displays all products.
 3. Clicking Login button leads to Login page.
 4. Individual product detail page can only be accessed after logging in (for the sake of practicing private routing).
