@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AllProductsPage from './pages/AllProductsPage';
 import LoginPage from './pages/LoginPage';
 import ProductDetailPage from './pages/ProductDetailPage';

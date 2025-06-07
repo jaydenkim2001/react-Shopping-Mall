@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap'; 
 import ProductCard from '../components/ProductCard';
 
 const AllProductsPage = () => {
@@ -16,7 +17,15 @@ const AllProductsPage = () => {
   }, [])
   return (
     <div>
-      <ProductCard/>
+      <Container>
+        <Row>
+          {productList.map( (item) => (
+            <Col lg={3}> 
+              <ProductCard item={item}/> 
+            </Col>) 
+          )}
+        </Row>
+      </Container>
     </div>
   )
 }
