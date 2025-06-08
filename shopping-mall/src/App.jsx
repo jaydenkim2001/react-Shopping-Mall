@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,14 +8,25 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import Navbar from './components/Navbar';
 
 function App() {
+  
+  /*
+  Since we are not developint the backend, we just assume if the value of 
+  authenticated is true, the user has logged in vice versa. 
+  */
+  const[authenticated, setAuthenticated] = useState(false); 
+
+  const PrivateRoute = () => { 
+    return authenticated === true ? <ProductDetailPage/> : <Navigate to="/login"/>  
+  }
+
 
   return (
     <div>
       <Navbar/>
       <Routes>
         <Route path='/' element={<AllProductsPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/product/:id' element={<ProductDetailPage/>}/>
+        <Route path='/login' element={<LoginPage setAuthenticated={setAuthenticated}/>}/>
+        <Route path='/product/:id' element={<PrivateRoute/>}/>
       </Routes>
     </div>
   )

@@ -3,14 +3,20 @@ import logo from '../assets/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router';
 
 const Navbar = () => {
   const menuList = ['Women', 'Men', 'Kids', 'Sales', 'Home'];
+  
+  const navigateLogin = useNavigate();
+  const goToLogin = () => {
+    navigateLogin("/login");
+  }
 
   return (
     <div>
         <div>
-            <div className='login-button'>
+            <div className='login-button' onClick={goToLogin}>
                 <FontAwesomeIcon icon={faUser} />
                 <div>Login</div>
             </div>

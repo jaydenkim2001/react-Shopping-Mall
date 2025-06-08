@@ -2,14 +2,14 @@
     display: flex;
     align-items: center;     /* Vertically align icon + text */
     justify-content: flex-end;
-    margin: 20px;
-    gap: 6px;                /* Adds space between icon and text */
-    font-size: 14px;         /* Optional: make it uniform */
+    margin: 40px;
+    gap: 8px;                /* Adds space between icon and text */
+    font-size: 16px;         /* Optional: make it uniform */
     cursor: pointer;         /* Optional: makes it feel clickable */
 }
 .login-button svg {
     position: relative;
-    top: 1px; /* or -1px depending on your visual preference */
+    top: -1px; /* or -1px depending on your visual preference */
 }
 
 .logo-section{

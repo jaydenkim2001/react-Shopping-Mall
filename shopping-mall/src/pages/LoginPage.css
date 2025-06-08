@@ -1,0 +1,39 @@
+.login-background {
+  background-color: #f4f4f4;
+  min-height: calc(100vh - 80px);  /* Adjust this value based on your actual navbar height */
+  padding-top: 80px;               /* Push it below the navbar */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;         /* Align towards top instead of vertical center */
+}
+
+
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 6px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.login-footer-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.create-account {
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  text-decoration: underline;
+}
