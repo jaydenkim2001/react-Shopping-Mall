@@ -6,6 +6,7 @@ import AllProductsPage from './pages/AllProductsPage';
 import LoginPage from './pages/LoginPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import Navbar from './components/Navbar';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
   
@@ -15,18 +16,13 @@ function App() {
   */
   const[authenticated, setAuthenticated] = useState(false); 
 
-  const PrivateRoute = () => { 
-    return authenticated === true ? <ProductDetailPage/> : <Navigate to="/login"/>  
-  }
-
-
   return (
     <div>
       <Navbar/>
       <Routes>
         <Route path='/' element={<AllProductsPage/>}/>
         <Route path='/login' element={<LoginPage setAuthenticated={setAuthenticated}/>}/>
-        <Route path='/product/:id' element={<PrivateRoute/>}/>
+        <Route path='/product/:id' element={<PrivateRoute authenticated={authenticated}/>}/>
       </Routes>
     </div>
   )
