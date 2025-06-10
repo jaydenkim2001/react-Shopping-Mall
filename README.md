@@ -11,3 +11,6 @@
 6. If logged out, the user is redirected to login page. 
 7. Login/Logout button is shown accordingly based on the login status.
 8. User can also search for products in the search bar.
+
+## Added on Functional Requirements:
+9. User can return back to home page (all products page) by clicking on the H&M logo. 
