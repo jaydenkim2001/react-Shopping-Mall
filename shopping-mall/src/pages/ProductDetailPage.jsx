@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import './ProductDetailPage.css';
+import './css/ProductDetailPage.css';
 
 
 const ProductDetailPage = () => {

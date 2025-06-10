@@ -8,9 +8,21 @@ import { useNavigate } from 'react-router';
 const Navbar = () => {
   const menuList = ['Women', 'Men', 'Kids', 'Sales', 'Home'];
   
-  const navigateLogin = useNavigate();
+  const navigate = useNavigate();
+
   const goToLogin = () => {
-    navigateLogin("/login");
+    navigate("/login");
+  }
+
+  const goToHomePage = () => {
+    navigate("/");
+  }
+
+  const search = (event) => {
+    if(event.key === "Enter"){
+        let keyword = event.target.value;
+        navigate(`/?q=${keyword}`);
+    }
   }
 
   return (
@@ -22,7 +34,7 @@ const Navbar = () => {
             </div>
         </div>
 
-        <div className='logo-section'>
+        <div className='logo-section' onClick={goToHomePage}>
             <img width={150} src={logo} alt="Logo"/>
         </div>
 
@@ -36,7 +48,7 @@ const Navbar = () => {
             </div>
             <div className='search-box'>
                 <FontAwesomeIcon icon={faSearch} />
-                <input type='text'/>
+                <input type='text' onKeyPress={(event)=>search(event)}/>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './LoginPage.css';
+import './css/LoginPage.css';
 import { useNavigate } from 'react-router';
 
 const LoginPage = ({setAuthenticated}) => {

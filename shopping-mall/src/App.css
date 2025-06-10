@@ -15,6 +15,7 @@
 .logo-section{
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .menu-area {

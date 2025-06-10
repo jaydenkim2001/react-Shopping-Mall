@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'; 
 import ProductCard from '../components/ProductCard';
+import { useSearchParams } from 'react-router';
 
 const AllProductsPage = () => {
   const [productList, setProductList] = useState([]);
+  const [query, setQuery] = useSearchParams();
 
   const getProducts = async () => {
-    let url = `/api/products`;
+    let searchQuery = query.get('q') || "";
+
+    let url = `/api/products?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
     setProductList(data);
   }
+
   useEffect(()=>{
     getProducts();
-  }, [])
+  }, [query])
+
   return (
     <div>
       <Container>
