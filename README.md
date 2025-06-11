@@ -14,3 +14,4 @@
 
 ## Added on Functional Requirements:
 9. User can return back to home page (all products page) by clicking on the H&M logo. 
+10. Cater to mobile version, with menus stored in the hamburger icon. 
