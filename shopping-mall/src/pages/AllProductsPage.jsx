@@ -25,7 +25,7 @@ const AllProductsPage = () => {
       <Container>
         <Row>
           {productList.map( (item) => (
-            <Col lg={3}> 
+            <Col lg={3} className="mb-3"> 
               <ProductCard item={item}/> 
             </Col>) 
           )}

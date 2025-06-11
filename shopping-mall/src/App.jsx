@@ -16,9 +16,13 @@ function App() {
   */
   const[authenticated, setAuthenticated] = useState(false); 
 
+  useEffect(() => {
+  console.log("Authenticated state changed:", authenticated);
+}, [authenticated]);
+
   return (
     <div>
-      <Navbar/>
+      <Navbar authenticated={authenticated} setAuthenticated={setAuthenticated}/>
       <Routes>
         <Route path='/' element={<AllProductsPage/>}/>
         <Route path='/login' element={<LoginPage setAuthenticated={setAuthenticated}/>}/>

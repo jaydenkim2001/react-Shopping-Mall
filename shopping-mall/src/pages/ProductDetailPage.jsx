@@ -15,7 +15,6 @@ const ProductDetailPage = () => {
     const response = await fetch(url);
     if (!response.ok) throw new Error("Failed to fetch product");
     const data = await response.json();
-    console.log("Singular Data:", data);
     setProduct(data);
   } catch (err) {
     console.error("Error:", err.message);

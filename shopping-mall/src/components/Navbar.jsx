@@ -1,17 +1,32 @@
 import React from 'react';
 import logo from '../assets/Logo.png';
+import './css/Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ( {authenticated, setAuthenticated} ) => {
   const menuList = ['Women', 'Men', 'Kids', 'Sales', 'Home'];
   
+  //Mobile Version Menu
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(prev => !prev);
+
   const navigate = useNavigate();
 
-  const goToLogin = () => {
-    navigate("/login");
+  const handleAuthentication = () => {
+    console.log("Clicked!", authenticated);
+    if(authenticated === true){
+      setAuthenticated(false);
+      navigate("/");
+    }
+    else{
+      setAuthenticated(false);
+      navigate("/login");
+    }
   }
 
   const goToHomePage = () => {
@@ -28,24 +43,33 @@ const Navbar = () => {
   return (
     <div>
         <div>
-            <div className='login-button' onClick={goToLogin}>
+            <div className='login-button' onClick={handleAuthentication}>
                 <FontAwesomeIcon icon={faUser} />
-                <div>Login</div>
+                <div>{authenticated ? "Logout" : "Login"}</div>
             </div>
         </div>
 
-        <div className='logo-section' onClick={goToHomePage}>
-            <img width={150} src={logo} alt="Logo"/>
+        <div className="logo-section">
+          <img width={150} src={logo} alt="Logo" />
+          <div className="hamburger-icon" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} size="lg" />
+          </div>
         </div>
 
         <div className='menu-area'>
-            <div className='menu-center'>
-                <ul className='menu-list'>
+            <div className={`menu-center ${menuOpen ? "show" : ""}`}>
+              <ul className="menu-list">
                 {menuList.map(menu => (
-                    <li>{menu}</li>
-                    ))}
-                </ul>
+                  <li key={menu} onClick={() => {
+                    setMenuOpen(false);
+                    // navigate or filter as needed
+                  }}>
+                    {menu}
+                  </li>  
+                ))}
+              </ul>
             </div>
+
             <div className='search-box'>
                 <FontAwesomeIcon icon={faSearch} />
                 <input type='text' onKeyPress={(event)=>search(event)}/>
