@@ -6,7 +6,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        //target: 'http://localhost:5000',
+        target: ' https://my-json-server.typicode.com/jaydenkim2001/react-Shopping-Mall',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '')
       }

@@ -42,7 +42,7 @@ const Navbar = ( {authenticated, setAuthenticated} ) => {
 
   return (
     <div>
-        <div>
+        {/* <div>
             <div className='login-button' onClick={handleAuthentication}>
                 <FontAwesomeIcon icon={faUser} />
                 <div>{authenticated ? "Logout" : "Login"}</div>
@@ -54,6 +54,21 @@ const Navbar = ( {authenticated, setAuthenticated} ) => {
           <div className="hamburger-icon" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faBars} size="lg" />
           </div>
+        </div> */}
+
+        <div className="navbar-top">
+          <div className="hamburger-icon" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} size="lg" />
+          </div>
+
+          <div className="login-button" onClick={handleAuthentication}>
+            <FontAwesomeIcon icon={faUser} />
+            <div>{authenticated ? "Logout" : "Login"}</div>
+          </div>
+        </div>
+        
+        <div className="logo-section" onClick={goToHomePage}>
+            <img width={150} src={logo} alt="Logo" />
         </div>
 
         <div className='menu-area'>
