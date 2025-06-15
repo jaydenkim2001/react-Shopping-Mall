@@ -11,7 +11,8 @@ const ProductDetailPage = () => {
 
   const getProductDetail = async () => {
   try {
-    const url = `/api/products/${id}`;
+    //const url = `/api/products/${id}`;
+    const url = `https://my-json-server.typicode.com/jaydenkim2001/react-Shopping-Mall/products/${id}`;
     const response = await fetch(url);
     if (!response.ok) throw new Error("Failed to fetch product");
     const data = await response.json();

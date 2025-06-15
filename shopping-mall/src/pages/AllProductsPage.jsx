@@ -10,7 +10,7 @@ const AllProductsPage = () => {
   const getProducts = async () => {
     let searchQuery = query.get('q') || "";
 
-    let url = `/api/products?q=${searchQuery}`;
+    let url = `https://my-json-server.typicode.com/jaydenkim2001/react-Shopping-Mall/products?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     setProductList(data);
